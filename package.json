@@ -1,0 +1,24 @@
+{
+  "name": "github-markdown.vercel.app",
+  "version": "0.0.0",
+  "description": "GitHub Flavored Markdown online renderer.",
+  "main": "api/index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": "https://github.com/Gerhut/github-markdown.vercel.app",
+  "author": "George Cheng <Gerhut@GMail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "common-tags": "^1.8.0",
+    "http-errors": "^1.8.0",
+    "node-fetch": "^2.6.1",
+    "type-is": "^1.6.18"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.8.4",
+    "standard": "^14.3.4",
+    "vercel": "^20.1.2"
+  }
+}
