@@ -9,20 +9,19 @@ const USER_AGENT = `${name}/${version}`
 
 /** @type {import('http').RequestListener} */
 module.exports = async (req, res) => {
-  let { url } = req
-
-  if (url !== undefined) {
-    if (url[0] === '/') {
-      url = url.slice(1)
-    }
-    url = decodeURIComponent(url)
-  }
-
-  if (!url) {
-    url = 'https://raw.githubusercontent.com/Gerhut/github-markdown.vercel.app/main/README.md'
-  }
-
   try {
+    let { url } = req
+
+    if (url !== undefined) {
+      if (url[0] === '/') {
+        url = url.slice(1)
+      }
+      url = decodeURIComponent(url)
+    }
+    if (!url) {
+      url = 'https://raw.githubusercontent.com/Gerhut/github-markdown.vercel.app/main/README.md'
+    }
+
     const text = await (async () => {
       const response = await fetch(url, {
         headers: {
@@ -100,4 +99,3 @@ module.exports = async (req, res) => {
     }
   }
 }
-

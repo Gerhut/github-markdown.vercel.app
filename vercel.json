@@ -1,3 +1,13 @@
 {
-  "routes": [{ "src": "/.*", "dest": "/api" }]
+  "build": {
+    "env": {
+      "NODEJS_HELPERS": "0"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api"
+    }
+  ]
 }
